@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 /* PAGE SECTIONS */
@@ -13,22 +14,17 @@ body {
 }
 
 .container {
-  width: 800px;
+  width: 1200px;
   margin: 0 auto;
 }
 
 .main-header {
   background-color: #f7f7f7;
   padding: 20px 40px;
-  margin-bottom: 60px;
 }
 
 nav {
   font-size: 18px;
-}
-
-article {
-  margin-bottom: 60px;
 }
 
 .post-header {
@@ -39,8 +35,7 @@ aside {
   background-color: #f7f7f7;
   border-top: 5px solid #1098ad;
   border-bottom: 5px solid #1098ad;
-  padding: 50px 0;
-  width: 500px;
+  padding: 50px 40px;
 }
 
 /* SMALLER ELEMENTS */
@@ -71,6 +66,7 @@ h4 {
   font-size: 20px;
   text-transform: uppercase;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 p {
@@ -94,9 +90,11 @@ li:last-child {
   margin-bottom: 0;
 }
 
-#author {
+.author {
   font-style: italic;
   font-size: 18px;
+  margin-bottom: 0;
+  margin-left: 15px;
 }
 
 #copyright {
@@ -104,23 +102,18 @@ li:last-child {
 }
 
 .related-author {
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: italic;
+  margin-bottom: 0;
 }
 
 .related {
   list-style: none;
+  margin-left: 0;
 }
 
-li:first-child {
-  font-weight: bold;
-}
-
-li:last-child {
-  font-style: italic;
-}
-
-/* Styling links (LVHA) */
+/* Styling links - LVHA */
 a:link {
   color: #1098ad;
   text-decoration: none;
@@ -148,7 +141,6 @@ a:active {
 
 nav a:link {
   margin-right: 30px;
-  margin-top: 10px;
   display: inline-block;
 }
 
@@ -171,9 +163,9 @@ h1::first-letter {
   margin-right: 5px;
 }
 
-/* h3 + p::first-line {
-  color: red;
-} */
+h3 + p::first-line {
+  /* color: red; */
+}
 
 h2 {
   position: relative;
@@ -192,21 +184,30 @@ h2::before {
   right: -25px;
 }
 
-/* Resolving conflicts */
-/* #copyright {
-  color: red;
+/*  --- Flexbox --- */
+.main-header {
+  display: flex;
+  align-items: center; /* Vertically aligns flex items */
+  justify-content: space-between; /* horizontally aligns flex items */
 }
-.copyright {
-  color: blue;
-}
-.text {
-  color: yellow;
-}
-footer p {
-  color: green !important;
-} */
 
-/* nav a:link,
-nav p {
-  font-size: 18px;
-} */
+.auth-box {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.related li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.related-link:link {
+  font-size: 17px;
+  font-weight: bold;
+  font-style: normal;
+  display: inline-block;
+  margin-bottom: 5px;
+}
