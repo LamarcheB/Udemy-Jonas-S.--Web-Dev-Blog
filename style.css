@@ -13,22 +13,8 @@ body {
   position: relative;
 }
 
-.container {
-  width: 1200px;
-  margin: 0 auto;
-}
-
-.main-header {
-  background-color: #f7f7f7;
-  padding: 20px 40px;
-}
-
 nav {
   font-size: 18px;
-}
-
-.post-header {
-  margin-bottom: 40px;
 }
 
 aside {
@@ -36,24 +22,6 @@ aside {
   border-top: 5px solid #1098ad;
   border-bottom: 5px solid #1098ad;
   padding: 50px 40px;
-  align-self: flex-start; /* Stops the aside from spanning the whole height of the page */
-  /* Doesn't work, need to enable shrinking with flex-shrink 
-    flex-basis: 300px; 
-    flex-shrink: 0;
-    flex-grow: 0; 
-
-  Short hand  flex: grow shrink basis*/
-  flex: 0 0 300px;
-}
-
-article {
-  flex: 1; /* Setting flex to 1 allows it so shrink/grow as needed in the available space*/
-}
-
-.main-wrapper {
-  display: flex;
-  gap: 75px;
-  margin-bottom: 60px;
 }
 
 /* SMALLER ELEMENTS */
@@ -202,14 +170,6 @@ h2::before {
   right: -25px;
 }
 
-/*  --- Flexbox --- */
-.main-header {
-  display: flex;
-  align-items: center; /* Vertically aligns flex items */
-  justify-content: space-between; /* horizontally aligns flex items */
-  margin-bottom: 60px;
-}
-
 .auth-box {
   display: flex;
   justify-content: left;
@@ -229,4 +189,30 @@ h2::before {
   font-style: normal;
   display: inline-block;
   margin-bottom: 5px;
+}
+
+.main-header {
+  background-color: #f7f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  grid-column: 1 / -1;
+}
+
+.main-header {
+}
+
+/**** Grid CSS ****/
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  /* grid-template-rows: auto; */
+  column-gap: 75px;
+  row-gap: 60px;
+  align-items: start;
 }
